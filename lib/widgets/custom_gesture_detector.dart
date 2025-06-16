@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomGestureDetector extends StatelessWidget {
-  const CustomGestureDetector({super.key, required this.text});
+  CustomGestureDetector({super.key, required this.text, required this.onTap});
 
   final String text;
+  VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Text(
         text,
         style: TextStyle(
