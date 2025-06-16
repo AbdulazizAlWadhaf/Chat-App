@@ -1,10 +1,12 @@
+import 'package:chat_app/Pages/signup_page.dart';
 import 'package:chat_app/widgets/custom_gesture_detector.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
+  static String id = 'LoginPage';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +16,7 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.message, size: 196, color: Colors.grey),
+              Icon(Icons.message_rounded, size: 196),
               const SizedBox(height: 64),
               CustomTextField(hintText: 'Email'),
               const SizedBox(height: 16),
@@ -31,7 +33,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      'Log in',
+                      'Log In',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -49,7 +51,12 @@ class LoginPage extends StatelessWidget {
                     'Don\'t have an account? ',
                     style: TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
                   ),
-                  CustomGestureDetector(text: ' Log in'),
+                  CustomGestureDetector(
+                    text: ' Sign Up',
+                    onTap: () {
+                      Navigator.pushNamed(context, SignupPage.id);
+                    },
+                  ),
                 ],
               ),
             ],

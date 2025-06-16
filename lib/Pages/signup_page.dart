@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import '../widgets/custom_text_field.dart';
 
 class SignupPage extends StatelessWidget {
-  const SignupPage({super.key});
+  SignupPage({super.key});
 
+  static String id = 'SignupPage';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +51,12 @@ class SignupPage extends StatelessWidget {
                     'Already have an account?',
                     style: TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
                   ),
-                  CustomGestureDetector(text: ' Sign Up'),
+                  CustomGestureDetector(
+                    text: ' Log in',
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
                 ],
               ),
             ],
