@@ -1,3 +1,4 @@
+import 'package:chat_app/Pages/chat_page.dart';
 import 'package:chat_app/Pages/signup_page.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_gesture_detector.dart';
@@ -59,7 +60,8 @@ class _LoginPageState extends State<LoginPage> {
                           setState(() {});
                           try {
                             await loginUser();
-                            showSnackBar(context, 'Success');
+                            //showSnackBar(context, 'Success');
+                            Navigator.pushNamed(context, ChatPage.id);
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'user-not-found') {
                               showSnackBar(context, 'User not found');

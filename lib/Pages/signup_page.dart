@@ -1,3 +1,4 @@
+import 'package:chat_app/Pages/chat_page.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_gesture_detector.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -63,7 +64,8 @@ class _SignupPageState extends State<SignupPage> {
                           setState(() {});
                           try {
                             await signupUser();
-                            showSnackBar(context, 'Success');
+                            //showSnackBar(context, 'Success');
+                            Navigator.pushNamed(context, ChatPage.id);
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'weak-password') {
                               showSnackBar(context, 'Weak Password');
