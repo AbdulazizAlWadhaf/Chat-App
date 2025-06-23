@@ -43,6 +43,7 @@ class _SignupPageState extends State<SignupPage> {
                     Icon(Icons.message_rounded, size: 196),
                     const SizedBox(height: 64),
                     CustomTextFormField(
+                      obsecureText: false,
                       hintText: 'Email',
                       onChanged: (data) {
                         email = data;
@@ -50,6 +51,7 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     const SizedBox(height: 16),
                     CustomTextFormField(
+                      obsecureText: true,
                       hintText: 'Password',
                       onChanged: (data) {
                         password = data;
